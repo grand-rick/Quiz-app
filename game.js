@@ -14,16 +14,14 @@ let availableQuestions = [];
 let questions = [];
 
 fetch('questions.json')
-    .then( res => {
-        return res.json()
-    })
-    .then( loadedQuestions => {
+    .then((res) => {
+        return res.json();
+    }).then((loadedQuestions) => {
         questions = loadedQuestions;
         startGame();
-    })
-    .catch( err => {
+    }).catch((err) => {
         console.error(err);
-    })
+    });
 
 //CONSTANTS
 const CORRECT_BONUS = 10;
@@ -87,9 +85,7 @@ choices.forEach((choice) => {
 incrementScore = num => {
     score += num;
     scoreText.innerText = score;
-}
-
-startGame();
+};
 
 
 
